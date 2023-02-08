@@ -1,0 +1,19 @@
+spring:
+  application:
+    name: based load test
+  jpa:
+    database: postgresql
+    hibernate:
+      ddl-auto: update
+  datasource:
+    url: jdbc:postgresql://${POSTGRES_HOST:localhost}:${POSTGRES_PORT:5432}/${POSTGRES_DATABASE:load-test-based}
+    username: ${POSTGRES_USER_NAME:postgres}
+    password: ${POSTGRES_PASSWORD:postgres}
+  flyway:
+    url: jdbc:postgresql://${POSTGRES_HOST:localhost}:${POSTGRES_PORT:5432}/${POSTGRES_DATABASE:load-test-based}
+    user: ${POSTGRES_USER_NAME:postgres}
+    password: ${POSTGRES_PASSWORD:postgres}
+    enabled: false
+server:
+  port: ${SERVER_PORT:8080}
+

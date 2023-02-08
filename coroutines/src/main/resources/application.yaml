@@ -1,0 +1,14 @@
+spring:
+  application:
+    name: coroutines load test
+  r2dbc:
+    url: r2dbc:postgresql://${POSTGRES_HOST:localhost}:${POSTGRES_PORT:5432}/${POSTGRES_DATABASE:load-test-coroutines}
+    username: ${POSTGRES_USER_NAME:postgres}
+    password: ${POSTGRES_PASSWORD:postgres}
+  flyway:
+    url: jdbc:postgresql://${POSTGRES_HOST:localhost}:${POSTGRES_PORT:5432}/${POSTGRES_DATABASE:load-test-coroutines}
+    user: ${POSTGRES_USER_NAME:postgres}
+    password: ${POSTGRES_PASSWORD:postgres}
+    enabled: false
+server:
+  port: ${SERVER_PORT:8080}
